@@ -21,11 +21,12 @@
 #include <hls_stream.h>
 #include "xf_database/bitonic_sort.hpp"
 
-#define BitonicSortNumber 32 // how "parallel" the kernel is
+#define BitonicSortNumber 8 // how "parallel" the kernel is
 #define KEY_BW 32
 #define DATA_BW 32
 #define BW (KEY_BW + DATA_BW)
-#define LEN (BitonicSortNumber * 4 * 32) // randomly chosen  4,096
+//#define LEN (BitonicSortNumber * 32 * 4) // Doesn't work
+#define LEN BitonicSortNumber
 typedef ap_uint<32> KEY_TYPE;
 typedef ap_uint<32> DATA_TYPE;
 

@@ -1,0 +1,15 @@
+Sat Sep 14 09:11:29 2024: Server was asked to start on port: '33975'
+Sat Sep 14 09:11:29 2024: Server is using token UUID: '9a82b518-8dc8-434c-a23b-c268177139d7'
+Sat Sep 14 09:11:29 2024: Attempting to start server on port '33975'
+Sat Sep 14 09:11:29 2024: Failed to create acceptor endpoint [::1]:33975, exception: bind: Cannot assign requested address
+Sat Sep 14 09:11:29 2024: XRC main fifo: created main fifo '/tmp/xrcmain9a82b518-8dc8-434c-a23b-c268177139d7', fd read = 10
+Sat Sep 14 09:11:29 2024: Running Rule Check Server
+Sat Sep 14 09:11:29 2024: Version 1.6.1
+Sat Sep 14 09:11:30 2024: Rule Check Server: Accepted socket connection from client
+Sat Sep 14 09:11:30 2024: EXCHANGE_TOKEN received, server token: 9a82b518-8dc8-434c-a23b-c268177139d7, passed token: 9a82b518-8dc8-434c-a23b-c268177139d7
+Sat Sep 14 09:12:27 2024: STOP_SERVER received, server token: 9a82b518-8dc8-434c-a23b-c268177139d7, passed token: 9a82b518-8dc8-434c-a23b-c268177139d7
+Sat Sep 14 09:12:27 2024: Socket received request to stop server.
+Sat Sep 14 09:12:27 2024: SERVER: destructor for server bound to port 33975
+Sat Sep 14 09:12:27 2024: XRC main fifo: Good unlink of /tmp/xrcmain9a82b518-8dc8-434c-a23b-c268177139d7
+Sat Sep 14 09:12:27 2024: Server exiting with status 0.
+Sat Sep 14 09:12:27 2024: Closing log file.
