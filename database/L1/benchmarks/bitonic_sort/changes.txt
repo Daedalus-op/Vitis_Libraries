@@ -1,0 +1,66 @@
+------------------------------
+./Makefile:129:HOST_ARGS :=  -xclbin $(BUILD_DIR)/SortKernel.xclbin
+./Makefile:139:VPP_FLAGS_SortKernel +=  -D KERNEL_NAME=SortKernel
+./Makefile:140:VPP_FLAGS_SortKernel += --hls.clock 300000000:SortKernel
+./Makefile:142:VPP_LDFLAGS_SortKernel += --clock.defaultFreqHz 300000000
+./Makefile:144:VPP_LDFLAGS_SortKernel += --kernel_frequency 300
+./Makefile:146:VPP_LDFLAGS_SortKernel_temp := --config $(CUR_DIR)/conn_u280.cfg
+./Makefile:147:VPP_LDFLAGS_SortKernel += $(VPP_LDFLAGS_SortKernel_temp)
+./Makefile:150:VPP_FLAGS_SortKernel +=  -D KERNEL_NAME=SortKernel
+./Makefile:151:VPP_FLAGS_SortKernel += --hls.clock 200000000:SortKernel
+./Makefile:153:VPP_LDFLAGS_SortKernel += --clock.defaultFreqHz 200000000
+./Makefile:155:VPP_LDFLAGS_SortKernel += --kernel_frequency 200
+./Makefile:157:VPP_LDFLAGS_SortKernel_temp := --config $(CUR_DIR)/conn_u250.cfg
+./Makefile:158:VPP_LDFLAGS_SortKernel += $(VPP_LDFLAGS_SortKernel_temp)
+./Makefile:161:VPP_FLAGS_SortKernel +=  -D KERNEL_NAME=SortKernel
+./Makefile:162:VPP_FLAGS_SortKernel += --hls.clock 300000000:SortKernel
+./Makefile:164:VPP_LDFLAGS_SortKernel += --clock.defaultFreqHz 300000000
+./Makefile:166:VPP_LDFLAGS_SortKernel += --kernel_frequency 300
+./Makefile:168:VPP_LDFLAGS_SortKernel_temp := --config $(CUR_DIR)/conn_u200.cfg
+./Makefile:169:VPP_LDFLAGS_SortKernel += $(VPP_LDFLAGS_SortKernel_temp)
+./Makefile:172:VPP_FLAGS_SortKernel +=  -D KERNEL_NAME=SortKernel
+./Makefile:173:VPP_FLAGS_SortKernel += --hls.clock 300000000:SortKernel
+./Makefile:175:VPP_LDFLAGS_SortKernel += --clock.defaultFreqHz 300000000
+./Makefile:177:VPP_LDFLAGS_SortKernel += --kernel_frequency 300
+./Makefile:179:VPP_LDFLAGS_SortKernel_temp := --config $(CUR_DIR)/conn_u50.cfg
+./Makefile:180:VPP_LDFLAGS_SortKernel += $(VPP_LDFLAGS_SortKernel_temp)
+./Makefile:183:VPP_FLAGS_SortKernel +=  -D KERNEL_NAME=SortKernel
+./Makefile:184:VPP_FLAGS_SortKernel += --hls.clock 300000000:SortKernel
+./Makefile:186:VPP_LDFLAGS_SortKernel += --clock.defaultFreqHz 300000000
+./Makefile:188:VPP_LDFLAGS_SortKernel += --kernel_frequency 300
+./Makefile:193:BINARY_CONTAINERS += $(BUILD_DIR)/SortKernel.xclbin
+./Makefile:195:BINARY_CONTAINERS += $(BUILD_DIR)/SortKernel_pkg.$(LINK_TARGET_FMT)
+./Makefile:196:BINARY_CONTAINERS_PKG += $(BUILD_DIR)/SortKernel.xclbin
+./Makefile:200:$(TEMP_DIR)/SortKernel.xo: kernel/kernel_sort_top.cpp 
+./Makefile:201:	$(ECHO) "Compiling Kernel: SortKernel"
+./Makefile:204:BINARY_CONTAINER_SortKernel_OBJS += $(TEMP_DIR)/SortKernel.xo
+./Makefile:205:BINARY_CONTAINERS_DEPS += $(BINARY_CONTAINER_SortKernel_OBJS)
+./Makefile:336:ifeq (,$(wildcard $(BUILD_DIR)/SortKernel.awsxclbin))
+------------------------------
+./host/main.cpp:86:    cl::Kernel kernel_SortKernel(program, "SortKernel", &err);
+./host/main.cpp:91:    mext_o[0] = {2, inKey_alloc, kernel_SortKernel()};  // arg 2 of kernel
+./host/main.cpp:92:    mext_o[1] = {3, outKey_alloc, kernel_SortKernel()}; // arg 3 of kernel
+./host/main.cpp:110:    kernel_SortKernel.setArg(j++, 1);
+./host/main.cpp:111:    kernel_SortKernel.setArg(j++, keyLength);
+./host/main.cpp:112:    kernel_SortKernel.setArg(j++, inKey_buf);
+./host/main.cpp:113:    kernel_SortKernel.setArg(j++, outKey_buf);
+./host/main.cpp:114:    q.enqueueTask(kernel_SortKernel, &events_write, &events_kernel[0]);
+------------------------------
+./conn_u50.cfg:2:sp=SortKernel.m_axi_gmem0:HBM[0]
+./conn_u50.cfg:3:sp=SortKernel.m_axi_gmem1:HBM[0]
+./conn_u50.cfg:4:slr=SortKernel:SLR0
+./conn_u50.cfg:5:nk=SortKernel:1:SortKernel
+------------------------------
+./README.rst:55:   ./build_dir.hw.xilinx_u280_xdma_201920_3/host.exe -xclbin build_dir.hw.xilinx_u280_xdma_201920_3/SortKernel.xclbin 
+./README.rst:76:   INFO: Importing build_dir.hw.xilinx_u280_xdma_201920_3/SortKernel.xclbin
+./README.rst:77:   Loading: 'build_dir.hw.xilinx_u280_xdma_201920_3/SortKernel.xclbin'
+./README.rst:101:    | SortKernel |    62685     |    18     |    16    |    0   |
+------------------------------
+./description.json:17:                    "name": "SortKernel",
+./description.json:25:            "cmd_args": " -xclbin BUILD/SortKernel.xclbin",
+./description.json:63:                    "clflags": " -D KERNEL_NAME=SortKernel",
+./description.json:64:                    "name": "SortKernel"
+./description.json:68:            "name": "SortKernel"
+------------------------------
+./kernel/kernel_sort.hpp:33:extern "C" void SortKernel(int order, int keyLength, KEY_TYPE inKey[LEN], KEY_TYPE outKey[LEN]);
+./kernel/kernel_sort_top.cpp:41:extern "C" void SortKernel(int order, int keyLength, KEY_TYPE inKey[LEN], KEY_TYPE outKey[LEN]) {

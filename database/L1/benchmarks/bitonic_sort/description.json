@@ -14,7 +14,7 @@
         "u250": {
             "containers": [
                 {
-                    "name": "SortKernel",
+                    "name": "bitonicKernel",
                     "ldclflags": "--config PROJECT/conn_u250.cfg"
                 }
             ]
@@ -22,7 +22,7 @@
     },
     "launch": [
         {
-            "cmd_args": " -xclbin BUILD/SortKernel.xclbin",
+            "cmd_args": " -xclbin BUILD/bitonicKernel.xclbin",
             "name": "generic launch for all flows"
         }
     ],
@@ -60,12 +60,12 @@
                 {
                     "location": "kernel/kernel_sort_top.cpp",
                     "frequency": 200,
-                    "clflags": " -D KERNEL_NAME=SortKernel",
-                    "name": "SortKernel"
+                    "clflags": " -D KERNEL_NAME=bitonicKernel",
+                    "name": "bitonicKernel"
                 }
             ],
             "frequency": 200,
-            "name": "SortKernel"
+            "name": "bitonicKernel"
         }
     ],
     "testinfo": {

@@ -26,10 +26,10 @@
 #define DATA_BW 32
 #define BW (KEY_BW + DATA_BW)
 //#define LEN (BitonicSortNumber * 32 * 4) // Doesn't work
-#define LEN BitonicSortNumber
+#define LEN BitonicSortNumber * 4
 typedef ap_uint<32> KEY_TYPE;
 typedef ap_uint<32> DATA_TYPE;
 
-extern "C" void SortKernel(int order, int keyLength, KEY_TYPE inKey[LEN], KEY_TYPE outKey[LEN]);
+extern "C" void bitonicKernel(int order, int keyLength, KEY_TYPE inKey[LEN], KEY_TYPE outKey[LEN]);
 
 #endif //_KERNEL_SORT_HPP_

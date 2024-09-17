@@ -38,7 +38,7 @@ void writeS2M(int keyLength, KEY_TYPE outKey[LEN], hls::stream<KEY_TYPE>& keyStr
     endStrm.read();
 }
 
-extern "C" void SortKernel(int order, int keyLength, KEY_TYPE inKey[LEN], KEY_TYPE outKey[LEN]) {
+extern "C" void bitonicKernel(int order, int keyLength, KEY_TYPE inKey[LEN], KEY_TYPE outKey[LEN]) {
 #pragma HLS dataflow
 #ifndef HLS_TEST
 #pragma HLS INTERFACE m_axi offset = slave latency = 64 num_write_outstanding = 16 num_read_outstanding = \
