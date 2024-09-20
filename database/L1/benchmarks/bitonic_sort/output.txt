@@ -1,0 +1,213 @@
+/bin/sh: 5: [[: not found
+/bin/sh: 5: [[: not found
+/bin/sh: 5: [[: not found
+/bin/sh: 5: [[: not found
+/bin/sh: 9: [[: not found
+/bin/sh: 12: [[: not found
+/bin/sh: 15: [[: not found
+mkdir -p build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1
+rm -rf build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/makefile_args.txt
+mkdir -p build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1
+g++ -o build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/host.exe host/main.cpp /home/xubundadu/Vitis_Libraries/database/ext/xcl2/xcl2.cpp -fmessage-length=0 -I/home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/src/ -I/opt/xilinx/xrt/include -I/tools/Xilinx/Vitis_HLS/2022.2/include -std=c++14 -O3 -Wall -Wno-unknown-pragmas -Wno-unused-label   -D PRAGMA -I /home/xubundadu/Vitis_Libraries/database/L1/include/hw -I host -I kernel -I /home/xubundadu/Vitis_Libraries/database/ext/xcl2 -I /home/xubundadu/Vitis_Libraries/database/../utils/L1/include -I /home/xubundadu/Vitis_Libraries/database/L1/include/hw -I /home/xubundadu/Vitis_Libraries/database/L3/include/sw -I /home/xubundadu/Vitis_Libraries/database/ext/xcl2 -I /home/xubundadu/Vitis_Libraries/database/../utils/L1/include -I /home/xubundadu/Vitis_Libraries/database/L1/include/hw -I /home/xubundadu/Vitis_Libraries/database/L3/include/sw -I /home/xubundadu/Vitis_Libraries/database/ext/xcl2 -I /home/xubundadu/Vitis_Libraries/database/../utils/L1/include -O3   -pthread -L/opt/xilinx/xrt/lib -L/tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/fpo_v7_1 -Wl,--as-needed -lOpenCL -lxrt_coreutil -lgmp -lmpfr -lIp_floating_point_v7_1_bitacc_cmodel 
+In file included from /tools/Xilinx/Vitis_HLS/2022.2/include/hls_fpo.h:143,
+                 from /tools/Xilinx/Vitis_HLS/2022.2/include/hls_half_fpo.h:18,
+                 from /tools/Xilinx/Vitis_HLS/2022.2/include/hls_half.h:25,
+                 from /tools/Xilinx/Vitis_HLS/2022.2/include/etc/ap_private.h:52,
+                 from /tools/Xilinx/Vitis_HLS/2022.2/include/ap_common.h:666,
+                 from /tools/Xilinx/Vitis_HLS/2022.2/include/ap_int.h:10,
+                 from host/main.cpp:20:
+/tools/Xilinx/Vitis_HLS/2022.2/include/floating_point_v7_1_bitacc_cmodel.h:10:1: warning: multi-line comment [-Wcomment]
+   10 | // \   \  /  \
+      | ^
+Compiling Kernel: bitonicKernel
+mkdir -p _x_temp.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1
+v++ -c -D KERNEL_NAME=bitonicKernel --hls.clock 300000000:bitonicKernel -t sw_emu --platform /opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm --save-temps   -I /home/xubundadu/Vitis_Libraries/database/L1/include/hw -I kernel -I /home/xubundadu/Vitis_Libraries/database/L1/include/hw -I /home/xubundadu/Vitis_Libraries/database/L2/include -k bitonicKernel -I'kernel' --temp_dir _x_temp.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1 --report_dir /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/reports/_x.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1 -o _x_temp.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel.xo kernel/kernel_sort_top.cpp
+Option Map File Used: '/tools/Xilinx/Vitis/2022.2/data/vitis/vpp/optMap.xml'
+
+****** v++ v2022.2 (64-bit)
+  **** SW Build 3671529 on 2022-10-13-17:52:11
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/reports/_x.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel
+	Log files: /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/_x_temp.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/logs/bitonicKernel
+Running Dispatch Server on port: 45873
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/_x_temp.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel.xo.compile_summary, at Fri Sep 20 19:34:31 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/reports/_x.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel/v++_compile_bitonicKernel_guidance.html', at Fri Sep 20 19:34:31 2024
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/hw/hw.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2022.2
+INFO: [v++ 60-585] Compiling for software emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u50_gen3x16_xdma_5_202210_1
+INFO: [v++ 60-242] Creating kernel: 'bitonicKernel'
+INFO: [v++ 60-1616] Creating a HLS clock using hls.clock option: 300 MHz
+INFO: [v++ 60-594] Finished kernel compilation
+INFO: [v++ 60-586] Created _x_temp.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel.xo
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/_x_temp.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel.xo.compile_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 22s
+INFO: [v++ 60-1653] Closing dispatch client.
+mkdir -p build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1
+v++ -l -t sw_emu --platform /opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm --save-temps   -I /home/xubundadu/Vitis_Libraries/database/L1/include/hw -I kernel -I /home/xubundadu/Vitis_Libraries/database/L1/include/hw -I /home/xubundadu/Vitis_Libraries/database/L2/include --temp_dir _x_temp.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1 --report_dir /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/reports/_build.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel --optimize 2 -R 2   --kernel_frequency 300 --config /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/conn_u50.cfg    -o build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel.xclbin _x_temp.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel.xo
+Option Map File Used: '/tools/Xilinx/Vitis/2022.2/data/vitis/vpp/optMap.xml'
+
+****** v++ v2022.2 (64-bit)
+  **** SW Build 3671529 on 2022-10-13-17:52:11
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ link can be found at:
+	Reports: /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/reports/_build.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel/link
+	Log files: /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/_x_temp.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/logs/link
+Running Dispatch Server on port: 36305
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel.xclbin.link_summary, at Fri Sep 20 19:34:55 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/reports/_build.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel/link/v++_link_bitonicKernel_guidance.html', at Fri Sep 20 19:34:55 2024
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/hw/hw.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2022.2
+INFO: [v++ 60-629] Linking for software emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u50_gen3x16_xdma_5_202210_1
+WARNING: [v++ 60-889] User-specified kernel frequency for ID 0 is the same as the default frequency 300 MHz, so it will be ignored
+INFO: [v++ 60-645] kernel flags are '-D KERNEL_NAME=bitonicKernel -I /home/xubundadu/Vitis_Libraries/database/L1/include/hw -I /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/kernel -I /home/xubundadu/Vitis_Libraries/database/L1/include/hw -I /home/xubundadu/Vitis_Libraries/database/L2/include -I /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/kernel'
+Check POST-VPL, containing 1 checks, has run: 0 errors
+INFO: [v++ 60-586] Created build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel.xclbin
+INFO: [v++ 60-1307] Run completed. Additional information can be found in:
+	Guidance: /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/reports/_build.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel/link/v++_link_bitonicKernel_guidance.html
+	Steps Log File: /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/_x_temp.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/logs/link/link.steps.log
+
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel.xclbin.link_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 17s
+INFO: [v++ 60-1653] Closing dispatch client.
+emconfigutil --platform /opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm --od build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1
+
+****** configutil v2022.2 (64-bit)
+  **** SW Build 3671529 on 2022-10-13-17:52:11
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+INFO: [ConfigUtil 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm
+INFO: [ConfigUtil 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/hw/hw.xsa'
+INFO: [ConfigUtil 60-1032] Extracting hardware platform to build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1
+emulation configuration file `emconfig.json` is created in build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1 directory 
+LD_LIBRARY_PATH=:$LD_LIBRARY_PATH \
+XCL_EMULATION_MODE=sw_emu build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/host.exe -xclbin build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel.xclbin 
+
+-----------Sort Design---------------
+key length is 32
+[INFO]Running in sw_emu mode
+Found Platform
+Platform Name: Xilinx
+Info: Context created
+Info: Command queue created
+Found Device=xilinx_u50_gen3x16_xdma_5_202210_1
+INFO: Importing build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel.xclbin
+Loading: 'build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/bitonicKernel.xclbin'
+Info: Program created
+Info: Kernel created
+kernel has been created
+kernel start------
+v[0]=35005211,key[0]=424238335
+
+the sort key is incorrect
+v[1]=233665123,key[1]=719885386
+
+the sort key is incorrect
+v[2]=278722862,key[2]=846930886
+
+the sort key is incorrect
+v[3]=294702567,key[3]=1649760492
+
+the sort key is incorrect
+v[4]=304089172,key[4]=1681692777
+
+the sort key is incorrect
+v[5]=336465782,key[5]=1714636915
+
+the sort key is incorrect
+v[6]=424238335,key[6]=1804289383
+
+the sort key is incorrect
+v[7]=468703135,key[7]=1957747793
+
+the sort key is incorrect
+v[8]=521595368,key[8]=596516649
+
+the sort key is incorrect
+v[9]=596516649,key[9]=783368690
+
+the sort key is incorrect
+v[10]=719885386,key[10]=1025202362
+
+the sort key is incorrect
+v[11]=783368690,key[11]=1102520059
+
+the sort key is incorrect
+v[12]=846930886,key[12]=1189641421
+
+the sort key is incorrect
+v[13]=861021530,key[13]=1350490027
+
+the sort key is incorrect
+v[14]=1025202362,key[14]=1967513926
+
+the sort key is incorrect
+v[15]=1101513929,key[15]=2044897763
+
+the sort key is incorrect
+v[16]=1102520059,key[16]=35005211
+
+the sort key is incorrect
+v[17]=1189641421,key[17]=294702567
+
+the sort key is incorrect
+v[18]=1303455736,key[18]=304089172
+
+the sort key is incorrect
+v[19]=1350490027,key[19]=521595368
+
+the sort key is incorrect
+v[20]=1365180540,key[20]=1303455736
+
+the sort key is incorrect
+v[21]=1540383426,key[21]=1365180540
+
+the sort key is incorrect
+v[22]=1649760492,key[22]=1540383426
+
+the sort key is incorrect
+v[23]=1681692777,key[23]=1726956429
+
+the sort key is incorrect
+v[24]=1714636915,key[24]=233665123
+
+the sort key is incorrect
+v[25]=1726956429,key[25]=278722862
+
+the sort key is incorrect
+v[26]=1801979802,key[26]=336465782
+
+the sort key is incorrect
+v[27]=1804289383,key[27]=468703135
+
+the sort key is incorrect
+v[28]=1957747793,key[28]=861021530
+
+the sort key is incorrect
+v[29]=1967513926,key[29]=1101513929
+
+the sort key is incorrect
+v[30]=2044897763,key[30]=1801979802
+
+the sort key is incorrect
+Write DDR Execution time 352.292us
+Kernel Execution time 721.976us
+Read DDR Execution time 97.293us
+Total Execution time 1171.56us
+Error: Test failed
+Kernel Name: bitonicKernel, CU Number: 0, Thread creation status: success
+Kernel Name: bitonicKernel, CU Number: 0, State: Start
+Kernel Name: bitonicKernel, CU Number: 0, State: Running
+Kernel Name: bitonicKernel, CU Number: 0, State: Idle
+device process sw_emu_device done
+Kernel Name: bitonicKernel, CU Number: 0, Status: Shutdown
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 33
+make: *** [Makefile:323: run] Error 31
