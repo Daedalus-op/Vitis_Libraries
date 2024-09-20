@@ -1,0 +1,32 @@
+/bin/sh: 5: [[: not found
+/bin/sh: 5: [[: not found
+/bin/sh: 5: [[: not found
+/bin/sh: 5: [[: not found
+/bin/sh: 9: [[: not found
+/bin/sh: 12: [[: not found
+/bin/sh: 15: [[: not found
+mkdir -p build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1
+rm -rf build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/makefile_args.txt
+mkdir -p build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1
+g++ -o build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/host.exe host/main.cpp /home/xubundadu/Vitis_Libraries/database/ext/xcl2/xcl2.cpp -fmessage-length=0 -I/home/xubundadu/Vitis_Libraries/database/L1/benchmarks/bitonic_sort/src/ -I/opt/xilinx/xrt/include -I/tools/Xilinx/Vitis_HLS/2022.2/include -std=c++14 -O3 -Wall -Wno-unknown-pragmas -Wno-unused-label   -D PRAGMA -I /home/xubundadu/Vitis_Libraries/database/L1/include/hw -I host -I kernel -I /home/xubundadu/Vitis_Libraries/database/ext/xcl2 -I /home/xubundadu/Vitis_Libraries/database/../utils/L1/include -I /home/xubundadu/Vitis_Libraries/database/L1/include/hw -I /home/xubundadu/Vitis_Libraries/database/L3/include/sw -I /home/xubundadu/Vitis_Libraries/database/ext/xcl2 -I /home/xubundadu/Vitis_Libraries/database/../utils/L1/include -I /home/xubundadu/Vitis_Libraries/database/L1/include/hw -I /home/xubundadu/Vitis_Libraries/database/L3/include/sw -I /home/xubundadu/Vitis_Libraries/database/ext/xcl2 -I /home/xubundadu/Vitis_Libraries/database/../utils/L1/include -O3   -pthread -L/opt/xilinx/xrt/lib -L/tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/fpo_v7_1 -Wl,--as-needed -lOpenCL -lxrt_coreutil -lgmp -lmpfr -lIp_floating_point_v7_1_bitacc_cmodel 
+In file included from /tools/Xilinx/Vitis_HLS/2022.2/include/hls_fpo.h:143,
+                 from /tools/Xilinx/Vitis_HLS/2022.2/include/hls_half_fpo.h:18,
+                 from /tools/Xilinx/Vitis_HLS/2022.2/include/hls_half.h:25,
+                 from /tools/Xilinx/Vitis_HLS/2022.2/include/etc/ap_private.h:52,
+                 from /tools/Xilinx/Vitis_HLS/2022.2/include/ap_common.h:666,
+                 from /tools/Xilinx/Vitis_HLS/2022.2/include/ap_int.h:10,
+                 from host/main.cpp:20:
+/tools/Xilinx/Vitis_HLS/2022.2/include/floating_point_v7_1_bitacc_cmodel.h:10:1: warning: multi-line comment [-Wcomment]
+   10 | // \   \  /  \
+      | ^
+In file included from host/main.cpp:23:
+kernel/kernel_sort.hpp:24:27: error: expected ‘>’ before numeric constant
+   24 | #define BitonicSortNumber 8 // how "parallel" the kernel is
+      |                           ^
+kernel/kernel_sort.hpp:38:34: note: in expansion of macro ‘BitonicSortNumber’
+   38 | template <typename Key_Type, int BitonicSortNumber>
+      |                                  ^~~~~~~~~~~~~~~~~
+kernel/kernel_sort.hpp:39:8: error: expected unqualified-id before string constant
+   39 | extern "C" void bitonicSort<KEY_TYPE, BitonicSortNumber>(inKeyStrm, inEndStrm, outKeyStrm, outEndStrm, order);
+      |        ^~~
+make: *** [Makefile:213: build_dir.sw_emu.xilinx_u50_gen3x16_xdma_5_202210_1/host.exe] Error 1
