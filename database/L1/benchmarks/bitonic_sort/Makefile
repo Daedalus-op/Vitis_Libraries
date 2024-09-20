@@ -126,7 +126,7 @@ EXE_NAME := host.exe
 EXE_FILE := $(BUILD_DIR)/$(EXE_NAME)
 EXE_FILE_DEPS := $(HOST_SRCS) $(INSTANCE_FILES)  $(EXE_FILE_DEPS)
 
-HOST_ARGS :=  -xclbin $(BUILD_DIR)/bitonicKernel.xclbin
+HOST_ARGS :=  -xclbin $(BUILD_DIR)/bitonicSort.xclbin
 ifneq ($(HOST_ARCH), x86)
 PKG_HOST_ARGS = $(foreach args,$(HOST_ARGS),$(subst $(dir $(patsubst %/,%,$(args))),,$(args)))
 endif
@@ -136,76 +136,76 @@ VPP_FLAGS +=  -I $(XFLIB_DIR)/L1/include/hw -I kernel -I $(XFLIB_DIR)/L1/include
 
 ######################### binary container global settings ##########################
 ifneq (,$(shell echo $(XPLATFORM) | awk '/u280/'))
-VPP_FLAGS_bitonicKernel +=  -D KERNEL_NAME=bitonicKernel
-VPP_FLAGS_bitonicKernel += --hls.clock 300000000:bitonicKernel
+VPP_FLAGS_bitonicSort +=  -D KERNEL_NAME=bitonicSort
+VPP_FLAGS_bitonicSort += --hls.clock 300000000:bitonicSort
 ifneq ($(HOST_ARCH_temp), x86)
-VPP_LDFLAGS_bitonicKernel += --clock.defaultFreqHz 300000000
+VPP_LDFLAGS_bitonicSort += --clock.defaultFreqHz 300000000
 else
-VPP_LDFLAGS_bitonicKernel += --kernel_frequency 300
+VPP_LDFLAGS_bitonicSort += --kernel_frequency 300
 endif
-VPP_LDFLAGS_bitonicKernel_temp := --config $(CUR_DIR)/conn_u280.cfg
-VPP_LDFLAGS_bitonicKernel += $(VPP_LDFLAGS_bitonicKernel_temp)
+VPP_LDFLAGS_bitonicSort_temp := --config $(CUR_DIR)/conn_u280.cfg
+VPP_LDFLAGS_bitonicSort += $(VPP_LDFLAGS_bitonicSort_temp)
 
 else ifneq (,$(shell echo $(XPLATFORM) | awk '/u250/'))
-VPP_FLAGS_bitonicKernel +=  -D KERNEL_NAME=bitonicKernel
-VPP_FLAGS_bitonicKernel += --hls.clock 200000000:bitonicKernel
+VPP_FLAGS_bitonicSort +=  -D KERNEL_NAME=bitonicSort
+VPP_FLAGS_bitonicSort += --hls.clock 200000000:bitonicSort
 ifneq ($(HOST_ARCH_temp), x86)
-VPP_LDFLAGS_bitonicKernel += --clock.defaultFreqHz 200000000
+VPP_LDFLAGS_bitonicSort += --clock.defaultFreqHz 200000000
 else
-VPP_LDFLAGS_bitonicKernel += --kernel_frequency 200
+VPP_LDFLAGS_bitonicSort += --kernel_frequency 200
 endif
-VPP_LDFLAGS_bitonicKernel_temp := --config $(CUR_DIR)/conn_u250.cfg
-VPP_LDFLAGS_bitonicKernel += $(VPP_LDFLAGS_bitonicKernel_temp)
+VPP_LDFLAGS_bitonicSort_temp := --config $(CUR_DIR)/conn_u250.cfg
+VPP_LDFLAGS_bitonicSort += $(VPP_LDFLAGS_bitonicSort_temp)
 
 else ifneq (,$(shell echo $(XPLATFORM) | awk '/u200/'))
-VPP_FLAGS_bitonicKernel +=  -D KERNEL_NAME=bitonicKernel
-VPP_FLAGS_bitonicKernel += --hls.clock 300000000:bitonicKernel
+VPP_FLAGS_bitonicSort +=  -D KERNEL_NAME=bitonicSort
+VPP_FLAGS_bitonicSort += --hls.clock 300000000:bitonicSort
 ifneq ($(HOST_ARCH_temp), x86)
-VPP_LDFLAGS_bitonicKernel += --clock.defaultFreqHz 300000000
+VPP_LDFLAGS_bitonicSort += --clock.defaultFreqHz 300000000
 else
-VPP_LDFLAGS_bitonicKernel += --kernel_frequency 300
+VPP_LDFLAGS_bitonicSort += --kernel_frequency 300
 endif
-VPP_LDFLAGS_bitonicKernel_temp := --config $(CUR_DIR)/conn_u200.cfg
-VPP_LDFLAGS_bitonicKernel += $(VPP_LDFLAGS_bitonicKernel_temp)
+VPP_LDFLAGS_bitonicSort_temp := --config $(CUR_DIR)/conn_u200.cfg
+VPP_LDFLAGS_bitonicSort += $(VPP_LDFLAGS_bitonicSort_temp)
 
 else ifneq (,$(shell echo $(XPLATFORM) | awk '/u50/'))
-VPP_FLAGS_bitonicKernel +=  -D KERNEL_NAME=bitonicKernel
-VPP_FLAGS_bitonicKernel += --hls.clock 300000000:bitonicKernel
+VPP_FLAGS_bitonicSort +=  -D KERNEL_NAME=bitonicSort
+VPP_FLAGS_bitonicSort += --hls.clock 300000000:bitonicSort
 ifneq ($(HOST_ARCH_temp), x86)
-VPP_LDFLAGS_bitonicKernel += --clock.defaultFreqHz 300000000
+VPP_LDFLAGS_bitonicSort += --clock.defaultFreqHz 300000000
 else
-VPP_LDFLAGS_bitonicKernel += --kernel_frequency 300
+VPP_LDFLAGS_bitonicSort += --kernel_frequency 300
 endif
-VPP_LDFLAGS_bitonicKernel_temp := --config $(CUR_DIR)/conn_u50.cfg
-VPP_LDFLAGS_bitonicKernel += $(VPP_LDFLAGS_bitonicKernel_temp)
+VPP_LDFLAGS_bitonicSort_temp := --config $(CUR_DIR)/conn_u50.cfg
+VPP_LDFLAGS_bitonicSort += $(VPP_LDFLAGS_bitonicSort_temp)
 
 else 
-VPP_FLAGS_bitonicKernel +=  -D KERNEL_NAME=bitonicKernel
-VPP_FLAGS_bitonicKernel += --hls.clock 300000000:bitonicKernel
+VPP_FLAGS_bitonicSort +=  -D KERNEL_NAME=bitonicSort
+VPP_FLAGS_bitonicSort += --hls.clock 300000000:bitonicSort
 ifneq ($(HOST_ARCH_temp), x86)
-VPP_LDFLAGS_bitonicKernel += --clock.defaultFreqHz 300000000
+VPP_LDFLAGS_bitonicSort += --clock.defaultFreqHz 300000000
 else
-VPP_LDFLAGS_bitonicKernel += --kernel_frequency 300
+VPP_LDFLAGS_bitonicSort += --kernel_frequency 300
 endif
 
 endif
 ifneq ($(SD_CARD_NEEDED), on)
-BINARY_CONTAINERS += $(BUILD_DIR)/bitonicKernel.xclbin
+BINARY_CONTAINERS += $(BUILD_DIR)/bitonicSort.xclbin
 else
-BINARY_CONTAINERS += $(BUILD_DIR)/bitonicKernel_pkg.$(LINK_TARGET_FMT)
-BINARY_CONTAINERS_PKG += $(BUILD_DIR)/bitonicKernel.xclbin
+BINARY_CONTAINERS += $(BUILD_DIR)/bitonicSort_pkg.$(LINK_TARGET_FMT)
+BINARY_CONTAINERS_PKG += $(BUILD_DIR)/bitonicSort.xclbin
 endif
 
 # ################ Setting Rules for Binary Containers (Building Kernels) ################
-$(TEMP_DIR)/bitonicKernel.xo: kernel/kernel_sort_top.cpp 
-	$(ECHO) "Compiling Kernel: bitonicKernel"
+$(TEMP_DIR)/bitonicSort.xo: kernel/kernel_sort_top.cpp 
+	$(ECHO) "Compiling Kernel: bitonicSort"
 	mkdir -p $(TEMP_DIR)
-	$(VPP) -c $(VPP_FLAGS_bitonicKernel) $(VPP_FLAGS) -k bitonicKernel -I'$(<D)' --temp_dir $(TEMP_DIR) --report_dir $(TEMP_REPORT_DIR) -o $@ $^
-BINARY_CONTAINER_bitonicKernel_OBJS += $(TEMP_DIR)/bitonicKernel.xo
-BINARY_CONTAINERS_DEPS += $(BINARY_CONTAINER_bitonicKernel_OBJS)
+	$(VPP) -c $(VPP_FLAGS_bitonicSort) $(VPP_FLAGS) -k bitonicSort -I'$(<D)' --temp_dir $(TEMP_DIR) --report_dir $(TEMP_REPORT_DIR) -o $@ $^
+BINARY_CONTAINER_bitonicSort_OBJS += $(TEMP_DIR)/bitonicSort.xo
+BINARY_CONTAINERS_DEPS += $(BINARY_CONTAINER_bitonicSort_OBJS)
 $(BINARY_CONTAINERS): $(BINARY_CONTAINERS_DEPS)
 	mkdir -p $(BUILD_DIR)
-	$(VPP) -l $(VPP_FLAGS) --temp_dir $(TEMP_DIR) --report_dir $(BUILD_REPORT_DIR)/bitonicKernel $(VPP_LDFLAGS)  $(VPP_LDFLAGS_bitonicKernel) $(AIE_LDFLAGS)   -o $@ $^
+	$(VPP) -l $(VPP_FLAGS) --temp_dir $(TEMP_DIR) --report_dir $(BUILD_REPORT_DIR)/bitonicSort $(VPP_LDFLAGS)  $(VPP_LDFLAGS_bitonicSort) $(AIE_LDFLAGS)   -o $@ $^
 
 ############################## Setting Rules for Host (Building Host Executable) ##############################
 $(EXE_FILE): $(EXE_FILE_DEPS)
@@ -333,7 +333,7 @@ endif
 #hw
 ifeq ($(TARGET), hw)
 ifneq (,$(findstring aws-vu9p-f1, $(PLATFORM_NAME)))
-ifeq (,$(wildcard $(BUILD_DIR)/bitonicKernel.awsxclbin))
+ifeq (,$(wildcard $(BUILD_DIR)/bitonicSort.awsxclbin))
 	$(ECHO) "This makefile does not directly support converting .xclbin to .awsxclbin, please refer https://github.com/aws/aws-fpga/blob/master/Vitis/README.md for next operations"
 else
 	$(ECHO) "Running HW using generated .awsxclbin"

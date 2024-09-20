@@ -19,7 +19,7 @@
 
 #include <ap_int.h>
 #include <hls_stream.h>
-#include "xf_database/bitonic_sort.hpp"
+#include "bitonic_sort.hpp"
 
 #define BitonicSortNumber 8 // how "parallel" the kernel is
 #define KEY_BW 32
@@ -30,6 +30,13 @@
 typedef ap_uint<32> KEY_TYPE;
 typedef ap_uint<32> DATA_TYPE;
 
-extern "C" void bitonicKernel(int order, int keyLength, KEY_TYPE inKey[LEN], KEY_TYPE outKey[LEN]);
+hls::stream<KEY_TYPE> inKeyStrm;
+hls::stream<bool> inEndStrm;
+hls::stream<KEY_TYPE> outKeyStrm;
+hls::stream<bool> outEndStrm;
+
+template <typename Key_Type, int BitonicSortNumber>
+extern "C" void bitonicSort<KEY_TYPE, BitonicSortNumber>(inKeyStrm, inEndStrm, outKeyStrm, outEndStrm, order);
+//extern "C" void bitonicKernel(int order, int keyLength, KEY_TYPE inKey[LEN], KEY_TYPE outKey[LEN]);
 
 #endif //_KERNEL_SORT_HPP_
