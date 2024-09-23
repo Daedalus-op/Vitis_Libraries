@@ -1,3 +1,0 @@
---
-PLATFORM=/opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm
-TARGET=hw
