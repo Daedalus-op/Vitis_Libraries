@@ -26,7 +26,7 @@
 #define DATA_BW 32
 #define BW (KEY_BW + DATA_BW)
 //#define LEN (BitonicSortNumber * 32 * 4) // Doesn't work
-#define LEN BitonicSortNumber * 4
+#define LEN BitonicSortNumber
 typedef ap_uint<32> KEY_TYPE;
 typedef ap_uint<32> DATA_TYPE;
 
